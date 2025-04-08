@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Playlist Duration Calculator</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>YouTube Playlist Duration Calculator</h1>
+        <div class="input-section">
+            <input type="text" id="playlist-url" placeholder="Enter YouTube Playlist URL or ID">
+            <button id="calculate-btn">Calculate Duration</button>
+        </div>
+        <div class="result-section hidden">
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-value" id="total-videos">0</span>
+                    <span class="stat-label">Videos</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value" id="total-duration">00:00:00</span>
+                    <span class="stat-label">Total Duration</span>
+                </div>
+                <button id="download-pdf" class="download-btn hidden">Download as PDF</button>
+            </div>
+            <div class="progress-container hidden">
+                <div class="progress-bar" id="progress-bar"></div>
+                <span class="progress-text" id="progress-text">0%</span>
+            </div>
+            <div class="videos-list-container">
+                <h3>Playlist Videos:</h3>
+                <div class="videos-list" id="videos-list"></div>
+            </div>
+        </div>
+        <div class="error-message hidden" id="error-message"></div>
+        <div class="instructions">
+            <h3>How to use:</h3>
+            <ol>
+                <li>Paste the URL of a YouTube playlist (e.g., https://www.youtube.com/playlist?list=PLAYLIST_ID)</li>
+                <li>Or just paste the playlist ID (the part after list= in the URL)</li>
+                <li>Click "Calculate Duration"</li>
+                <li>Download the complete playlist info as PDF when calculation completes</li>
+            </ol>
+            <p class="note">Note: This tool requires a public playlist or your browser to be logged into YouTube if the playlist is private.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
